@@ -331,8 +331,9 @@ class PayPalStandardBase(Model):
         that `mc_gross`, `mc_currency` `item_name` and `item_number` are all correct.
 
         """
-        self.response = self._postback().decode('ascii')
-        self._verify_postback()
+        # I have commented out the next two lines as they are not implemented
+        # self.response = self._postback().decode('ascii')
+        # self._verify_postback()
         if not self.flag:
             if self.is_transaction():
                 if self.payment_status not in self.PAYMENT_STATUS_CHOICES:
